@@ -132,9 +132,9 @@ export default function Contact() {
                 <p className="text-xs text-muted-light uppercase tracking-wider mb-1">
                   Email
                 </p>
-                <p className="text-sm font-semibold text-off-white">
-                  contact@svdecoservices.com
-                </p>
+                 <p className="text-sm font-semibold text-off-white">
+                   svdeco963@gmail.com
+                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -145,9 +145,9 @@ export default function Contact() {
                 <p className="text-xs text-muted-light uppercase tracking-wider mb-1">
                   Phone
                 </p>
-                <p className="text-sm font-semibold text-off-white">
-                  +91 98765 43210
-                </p>
+                 <p className="text-sm font-semibold text-off-white">
+                   9449579555
+                 </p>
               </div>
             </div>
             <div className="flex items-center gap-4">

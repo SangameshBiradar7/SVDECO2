@@ -6,9 +6,9 @@ import { Factory, Zap, TrendingDown } from "lucide-react";
 
 const stats = [
   {
-    value: 7.9,
+    value: 18.51,
     suffix: "M+",
-    label: "Tonnes of Hazardous Waste Generated Per Year in India",
+    label: "Hazardous Waste Generated Annually Across India from 89,301 Hazardous Waste Generator Units",
     unit: "TONNES/YEAR",
     icon: TrendingDown,
     color: "text-amber",
@@ -16,7 +16,7 @@ const stats = [
   {
     value: 100,
     suffix: "%",
-    label: "Limited Formal Infrastructure for Safe Disposal",
+    label: "Only 41–51 Authorized Facilities Available for Safe Handling and Disposal of Hazardous Waste",
     unit: "LIMITED INFRASTRUCTURE",
     icon: Factory,
     color: "text-lime",
@@ -24,7 +24,7 @@ const stats = [
   {
     value: 75,
     suffix: "%+",
-    label: "Potential Energy Content Lost in Unprocessed Waste",
+    label: "Valuable Energy Potential Lost When Waste Remains Untreated or Unprocessed",
     unit: "LOST ENERGY",
     icon: Zap,
     color: "text-amber-light",
@@ -113,6 +113,38 @@ export default function Problem() {
             and manufacturing industries struggle with rising fossil fuel costs.
             SVD Eco Services bridges this gap.
           </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-16"
+        >
+          <div className="glass-strong rounded-3xl p-8 md:p-12 border border-lime/20 max-w-4xl mx-auto relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl" />
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8">
+              <div className="flex-shrink-0">
+                <div className="text-5xl md:text-6xl font-bold text-lime">
+                  20,000+
+                </div>
+                <div className="text-xs font-bold tracking-[0.2em] text-lime uppercase mt-2">
+                  MT Processed
+                </div>
+              </div>
+              <div className="h-px w-full md:w-px md:h-20 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-lime/30 to-transparent" />
+              <div className="flex-grow text-center md:text-left">
+                <div className="text-xs font-bold tracking-[0.3em] text-amber uppercase block mb-3">
+                  Our Track Record
+                </div>
+                <p className="text-off-white text-base md:text-lg leading-relaxed">
+                  Between 2024 and 2026, we have processed more than{" "}
+                  <span className="text-lime font-semibold">20,000 MT</span> of hazardous
+                  waste and converted it into alternative fuel for industrial applications.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

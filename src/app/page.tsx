@@ -17,7 +17,6 @@ import WhySVD from "@/components/WhySVD";
 import About from "@/components/About";
 import Team from "@/components/Team";
 import Roadmap from "@/components/Roadmap";
-import Funding from "@/components/Funding";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -39,7 +38,6 @@ export default function Home() {
       <About />
       <Team />
       <Roadmap />
-      <Funding />
       <Contact />
       <Footer />
     </main>

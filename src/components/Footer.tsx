@@ -122,7 +122,7 @@ export default function Footer() {
                 <p className="text-xs text-muted-light/60 uppercase tracking-wider mb-0.5">
                   Email
                 </p>
-                <p className="text-sm text-off-white">contact@svdecoservices.com</p>
+                 <p className="text-sm text-off-white">svdeco963@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center gap-3 text-muted-light">
@@ -133,7 +133,7 @@ export default function Footer() {
                 <p className="text-xs text-muted-light/60 uppercase tracking-wider mb-0.5">
                   Phone
                 </p>
-                <p className="text-sm text-off-white">+91 98765 43210</p>
+                 <p className="text-sm text-off-white">9449579555</p>
               </div>
             </div>
           </div>

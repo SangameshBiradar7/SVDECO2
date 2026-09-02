@@ -6,44 +6,18 @@ import { ExternalLink, Mail } from "lucide-react";
 
 const team = [
   {
-    name: "Vegiraju Verma",
-    role: "Founder & CEO",
-    bio: "Strategic leader with deep expertise in industrial waste management and sustainable business models.",
-    image: null,
-    initials: "VV",
-    color: "from-lime to-green-400",
-  },
-  {
     name: "Vishnu Shetty",
-    role: "Co-Founder & COO",
-    bio: "Operations expert overseeing logistics, processing efficiency, and supply chain management.",
+    role: "CEO",
     image: null,
     initials: "VS",
     color: "from-amber to-orange-500",
   },
   {
-    name: "Somanath Hunaje",
-    role: "Co-Founder & CTO",
-    bio: "Technology lead driving stabilization R&D, pelletization innovation, and process optimization.",
+    name: "Tushar Patil",
+    role: "COO",
     image: null,
-    initials: "SH",
+    initials: "TP",
     color: "from-emerald-400 to-lime",
-  },
-  {
-    name: "Dhanraj Patil",
-    role: "Co-Founder & CFO",
-    bio: "Financial strategist managing investor relations, fundraising, and fiscal planning.",
-    image: null,
-    initials: "DP",
-    color: "from-orange-500 to-amber",
-  },
-  {
-    name: "Dr. Kashinath",
-    role: "Mentor & Advisor",
-    bio: "Industry veteran providing strategic guidance on regulatory compliance and technical processes.",
-    image: null,
-    initials: "DK",
-    color: "from-lime-light to-lime",
   },
 ];
 
@@ -72,15 +46,14 @@ export default function Team() {
           </span>
           <h2 className="text-4xl md:text-6xl font-bold text-off-white mb-6 leading-tight">
             Meet the{" "}
-            <span className="text-lime">Founders</span>
+            <span className="text-lime">Leadership</span>
           </h2>
           <p className="text-lg text-muted-light max-w-2xl mx-auto leading-relaxed">
-            A diverse team of operators, technologists, and strategists united by a
-            common mission — to transform waste into value.
+            A focused team united by a common mission — to transform waste into value.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {team.map((member, i) => (
             <motion.div
               key={i}
@@ -104,9 +77,6 @@ export default function Team() {
                   </h3>
                   <p className="text-xs font-bold tracking-[0.15em] text-lime uppercase mb-4">
                     {member.role}
-                  </p>
-                  <p className="text-sm text-muted-light leading-relaxed mb-6">
-                    {member.bio}
                   </p>
 
                   <div className="flex items-center gap-3">
