@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Recycle, Truck, FlaskConical, Flame, Leaf } from "lucide-react";
+import Image from "next/image";
 
 const circularStages = [
   {
@@ -53,6 +54,18 @@ export default function CircularEconomy() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Circular economy background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/circular-economy.jpg"
+            alt="Sustainable industrial landscape circular economy"
+            fill
+            sizes="100vw"
+             className="object-cover opacity-10 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-deep-green via-deep-green/90 to-deep-green" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

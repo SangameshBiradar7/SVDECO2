@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Factory, Zap, TrendingDown } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
   {
@@ -54,6 +55,30 @@ export default function Problem() {
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-deep-green" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime/20 to-transparent" />
+
+      {/* Challenge images */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-1/2 h-full">
+          <Image
+            src="/images/challenge-waste.jpg"
+            alt="Industrial waste containers"
+            fill
+            sizes="50vw"
+             className="object-cover opacity-20 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal to-transparent" />
+        </div>
+        <div className="absolute top-0 right-0 w-1/2 h-full">
+          <Image
+            src="/images/challenge-energy.jpg"
+            alt="Cement plant industrial kiln"
+            fill
+            sizes="50vw"
+             className="object-cover opacity-20 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-l from-charcoal to-transparent" />
+        </div>
+      </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2e1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f1f0f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="circle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#84cc16;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <circle cx="200" cy="160" r="80" fill="url(#circle)" stroke="#34d399" stroke-width="2" opacity="0.5"/>
+  <text x="200" y="175" font-family="system-ui,sans-serif" font-size="48" font-weight="700" fill="#34d399" text-anchor="middle" opacity="0.8">TP</text>
+</svg>

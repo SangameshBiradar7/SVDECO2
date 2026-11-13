@@ -1,9 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import {
   Leaf,
-  Recycle,
   Mail,
   Phone,
   MapPin,
@@ -13,16 +11,20 @@ import Link from "next/link";
 
 const footerLinks = {
   Company: [
-    { name: "About", href: "#about" },
-    { name: "Team", href: "#team" },
-    { name: "Roadmap", href: "#roadmap" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
   ],
   Solutions: [
     { name: "How It Works", href: "#process" },
     { name: "Technology", href: "#technology" },
     { name: "Impact", href: "#impact" },
     { name: "Traceability", href: "#traceability" },
+  ],
+  Industries: [
+    { name: "Pharmaceutical", href: "#industries" },
+    { name: "Paint & Coatings", href: "#industries" },
+    { name: "Petrochemical", href: "#industries" },
+    { name: "Pesticides & Agrochemical", href: "#industries" },
   ],
   Legal: [
     { name: "Privacy Policy", href: "#" },
@@ -39,22 +41,22 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-charcoal border-t border-white/5 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-green/50 to-charcoal pointer-events-none" />
+    <footer className="relative bg-navy border-t border-white/10 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-deep-green/40 to-navy pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           <div className="lg:col-span-2">
             <Link href="#" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-lime to-lime-light flex items-center justify-center shadow-lg shadow-lime/20">
+              <div className="w-12 h-12 bg-lime flex items-center justify-center shadow-lg shadow-lime/20">
                 <Leaf className="w-6 h-6 text-deep-green" strokeWidth={2.5} />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-off-white leading-none">
-                  SVD
+                  SVD Eco Services
                 </span>
-                <span className="text-xs font-semibold tracking-[0.2em] text-lime uppercase">
-                  Eco Services
+                <span className="text-xs font-semibold tracking-[0.2em] text-muted-light uppercase">
+                  Sustainable Industrial Energy
                 </span>
               </div>
             </Link>

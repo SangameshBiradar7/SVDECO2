@@ -11,6 +11,7 @@ import {
   FlaskConical,
   TrendingUp,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Contact() {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,6 +29,18 @@ export default function Contact() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* CTA background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/cta-industrial.jpg"
+            alt="Modern industrial plant at dusk"
+            fill
+            sizes="100vw"
+             className="object-cover opacity-15 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-deep-green via-deep-green/90 to-deep-green" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -43,7 +56,7 @@ export default function Contact() {
             Future Together
           </h2>
           <p className="text-lg text-muted-light max-w-2xl mx-auto leading-relaxed">
-            Whether you're a waste generator, a cement plant, or an investor — we'd
+            Whether you&apos;re a waste generator, a cement plant, or an investor — we&apos;d
             love to explore how we can work together.
           </p>
         </motion.div>

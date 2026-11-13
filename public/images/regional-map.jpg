@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1f0f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2e1a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="region" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#84cc16;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#fbbf24;stop-opacity:0.2" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="100" y="80" width="250" height="340" rx="8" fill="url(#region)" stroke="#84cc16" stroke-width="2" opacity="0.6"/>
+  <circle cx="175" cy="200" r="10" fill="#84cc16" opacity="0.8"/>
+  <text x="175" y="225" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#84cc16" text-anchor="middle">Bidar</text>
+  <circle cx="300" cy="250" r="10" fill="#fbbf24" opacity="0.8"/>
+  <text x="300" y="275" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#fbbf24" text-anchor="middle">Kalaburagi</text>
+  <circle cx="250" cy="350" r="10" fill="#34d399" opacity="0.8"/>
+  <text x="250" y="375" font-family="system-ui,sans-serif" font-size="13" font-weight="600" fill="#34d399" text-anchor="middle">Vijayapura</text>
+  <text x="400" y="470" font-family="system-ui,sans-serif" font-size="11" fill="#6b7280" text-anchor="middle" opacity="0.6">North Karnataka Focus Region</text>
+</svg>

@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FlaskConical, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 const calorificData = [
   {
@@ -49,6 +50,18 @@ export default function Technology() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Technology background images */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/tech-pellets.jpg"
+            alt="Fuel pellets closeup"
+            fill
+            sizes="100vw"
+             className="object-cover opacity-10 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal to-deep-green/50" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

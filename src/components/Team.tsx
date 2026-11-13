@@ -3,19 +3,20 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Mail } from "lucide-react";
+import Image from "next/image";
 
 const team = [
   {
     name: "Vishnu Shetty",
     role: "CEO",
-    image: null,
+    image: "/images/team-vishnu.jpg",
     initials: "VS",
     color: "from-amber to-orange-500",
   },
   {
     name: "Tushar Patil",
     role: "COO",
-    image: null,
+    image: "/images/team-tushar.jpg",
     initials: "TP",
     color: "from-emerald-400 to-lime",
   },
@@ -66,10 +67,15 @@ export default function Team() {
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl group-hover:from-lime/20 transition-all duration-500" />
 
                 <div className="relative z-10 flex flex-col items-center text-center">
-                  <div
-                    className={`w-20 h-20 rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center text-2xl font-bold text-deep-green mb-6 shadow-lg`}
-                  >
-                    {member.initials}
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden mb-6 shadow-lg">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      sizes="80px"
+                       className="object-cover premium-image"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-br ${member.color} opacity-40 mix-blend-overlay`} />
                   </div>
 
                   <h3 className="text-xl font-bold text-off-white mb-1">

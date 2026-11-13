@@ -3,15 +3,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  ClipboardList,
-  Truck,
-  FlaskConical,
   CheckCircle2,
   Hash,
   Calendar,
   MapPin,
-  Thermometer,
 } from "lucide-react";
+import Image from "next/image";
 
 const trackingSteps = [
   {
@@ -75,12 +72,24 @@ export default function Traceability() {
     <section
       id="traceability"
       ref={ref}
-      className="relative py-32 overflow-hidden bg-charcoal"
+      className="relative py-32 overflow-hidden bg-navy"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-deep-green/30 to-charcoal" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Dashboard background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/traceability-dashboard.jpg"
+            alt="Digital industrial tracking dashboard"
+            fill
+            sizes="100vw"
+             className="object-cover opacity-10 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-deep-green/30 to-charcoal" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -96,7 +105,7 @@ export default function Traceability() {
           </h2>
           <p className="text-lg text-muted-light max-w-2xl mx-auto leading-relaxed">
             Our digital manifest system provides complete transparency from waste
-            collection to fuel delivery.
+            collection to fuel delivery. <span className="text-lime/80">Illustrative workflow.</span>
           </p>
         </motion.div>
 

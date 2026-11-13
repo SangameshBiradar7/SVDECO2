@@ -2,7 +2,15 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Leaf, Zap, Users, Shield, TrendingUp } from "lucide-react";
+import { Leaf, Zap, Users, Shield } from "lucide-react";
+import Image from "next/image";
+
+const impactImages = [
+  "/images/impact-environment.jpg",
+  "/images/impact-energy.jpg",
+  "/images/impact-employment.jpg",
+  "/images/impact-compliance.jpg",
+];
 
 const impacts = [
   {
@@ -97,6 +105,14 @@ export default function Impact() {
               <div
                 className={`relative rounded-3xl p-8 md:p-10 bg-gradient-to-br ${impact.bg} border ${impact.border} card-hover h-full overflow-hidden`}
               >
+                <Image
+                  src={impactImages[i]}
+                  alt={impact.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                   className="object-cover opacity-25 -z-10 premium-image"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-deep-green/60 to-charcoal/60" />
                 <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl group-hover:from-lime/20 transition-all duration-500" />
 
                 <div className="relative z-10">

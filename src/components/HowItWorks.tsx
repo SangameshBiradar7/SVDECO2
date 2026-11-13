@@ -3,6 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Truck, FlaskConical, Cog, Flame } from "lucide-react";
+import Image from "next/image";
+
+const stepImages = [
+  "/images/waste-collection.webp",
+  "/images/waste-stabilization.webp",
+  "/images/alternative-fuel.webp",
+  "/images/cement-kiln.webp",
+];
 
 const steps = [
   {
@@ -40,7 +48,7 @@ const steps = [
   },
   {
     num: "04",
-    title: "Supply to Kilns",
+    title: "Deliver Alternative Fuel",
     subtitle: "Energy Recovery",
     description:
       "Fuel pellets are supplied directly to cement kilns, replacing fossil fuels and reducing carbon emissions. The process completes the circular economy loop — from waste to industrial energy.",
@@ -95,6 +103,14 @@ export default function HowItWorks() {
             >
               <div className="glass rounded-3xl p-8 md:p-10 border border-white/5 card-hover h-full relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl group-hover:from-lime/20 transition-all duration-500" />
+                <Image
+                  src={stepImages[i]}
+                  alt={step.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                   className="object-cover opacity-20 -z-10 premium-image"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-green/90 via-deep-green/70 to-deep-green/50" />
 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-6">

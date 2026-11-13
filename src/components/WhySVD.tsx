@@ -110,7 +110,11 @@ const whyCards = [
                 transition={{ duration: 0.8, delay: 0.15 * i }}
                 className="group"
               >
-                <div className="glass rounded-3xl p-8 md:p-10 border border-white/5 card-hover h-full relative overflow-hidden">
+                <div className={`rounded-3xl p-8 md:p-10 border card-hover h-full relative overflow-hidden ${
+                  i % 2 === 0
+                    ? "bg-white border-slate-200"
+                    : "bg-navy border-white/10"
+                }`}>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl group-hover:from-lime/20 transition-all duration-500" />
 
                   <div className="relative z-10 flex flex-col h-full">

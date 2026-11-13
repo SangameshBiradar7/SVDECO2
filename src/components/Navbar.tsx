@@ -3,17 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import {
-  ChevronDown,
   Menu,
   X,
   Leaf,
-  Recycle,
-  FlaskConical,
-  Truck,
-  BarChart3,
-  Mail,
-  Phone,
-  MapPin,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -22,21 +14,42 @@ const navLinks = [
   { name: "Process", href: "#process" },
   { name: "Technology", href: "#technology" },
   { name: "Impact", href: "#impact" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("about");
   const { scrollY } = useScroll();
-  const navBg = useTransform(scrollY, [0, 100], ["rgba(10, 31, 10, 0)", "rgba(10, 31, 10, 0.85)"]);
+  const navBg = useTransform(scrollY, [0, 100], ["rgba(6, 59, 36, 0)", "rgba(6, 59, 36, 0.94)"]);
   const navBlur = useTransform(scrollY, [0, 100], ["blur(0px)", "blur(12px)"]);
   const navBorder = useTransform(scrollY, [0, 100], ["rgba(255,255,255,0)", "rgba(255,255,255,0.08)"]);
 
   useEffect(() => {
-    return scrollY.on("change", (latest) => {
+    const unsubscribe = scrollY.on("change", (latest) => {
       setIsScrolled(latest > 50);
     });
+    const sections = navLinks
+      .map((link) => document.querySelector(link.href))
+      .filter((section): section is Element => section !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) {
+          setActiveSection(visible.target.id);
+        }
+      },
+      { rootMargin: "-25% 0px -60% 0px", threshold: [0.1, 0.4, 0.75] }
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      unsubscribe();
+      observer.disconnect();
+    };
   }, [scrollY]);
 
   return (
@@ -51,18 +64,14 @@ export default function Navbar() {
         isScrolled ? "py-3" : "py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between border-b border-white/10 pb-4">
         <Link href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-lime to-lime-light flex items-center justify-center shadow-lg shadow-lime/20 group-hover:shadow-lime/40 transition-all duration-300">
+          <div className="w-10 h-10 bg-lime flex items-center justify-center group-hover:bg-lime-light transition-all duration-300">
             <Leaf className="w-5 h-5 text-deep-green" strokeWidth={2.5} />
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-off-white leading-none">
-              SVD
-            </span>
-            <span className="text-[10px] font-semibold tracking-[0.2em] text-lime uppercase">
-              Eco Services
-            </span>
+            <span className="text-lg font-bold tracking-tight text-off-white leading-none">SVD ECO</span>
+            <span className="text-[10px] font-semibold tracking-[0.2em] text-muted-light uppercase">Eco Services</span>
           </div>
         </Link>
 
@@ -71,15 +80,20 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-light hover:text-lime transition-colors duration-300 relative group"
+              aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
+              className={`text-sm font-medium transition-colors duration-300 relative group ${
+                activeSection === link.href.slice(1) ? "text-lime" : "text-muted-light hover:text-lime"
+              }`}
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-lime group-hover:w-full transition-all duration-300 rounded-full" />
+              <span className={`absolute -bottom-1 left-0 h-0.5 bg-lime transition-all duration-300 rounded-full ${
+                activeSection === link.href.slice(1) ? "w-full" : "w-0 group-hover:w-full"
+              }`} />
             </Link>
           ))}
           <Link
-            href="#contact"
-            className="px-5 py-2.5 text-sm font-semibold bg-lime text-deep-green rounded-full hover:bg-lime-light transition-all duration-300 shadow-lg shadow-lime/20 hover:shadow-lime/40"
+            href="/contact"
+            className="px-5 py-2.5 text-sm font-semibold bg-lime text-deep-green hover:bg-lime-light transition-all duration-300"
           >
             Get In Touch
           </Link>
@@ -106,13 +120,16 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileOpen(false)}
-                className="text-base font-medium text-off-white hover:text-lime transition-colors py-2"
+                aria-current={activeSection === link.href.slice(1) ? "page" : undefined}
+                className={`text-base font-medium transition-colors py-2 ${
+                  activeSection === link.href.slice(1) ? "text-lime" : "text-off-white hover:text-lime"
+                }`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setIsMobileOpen(false)}
               className="px-5 py-3 text-base font-semibold bg-lime text-deep-green rounded-full text-center hover:bg-lime-light transition-all duration-300"
             >

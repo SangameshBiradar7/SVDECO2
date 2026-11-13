@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, TrendingUp, Building2 } from "lucide-react";
+import Image from "next/image";
 
 const regions = [
   {
@@ -53,6 +54,18 @@ export default function RegionalFocus() {
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-lime/20 to-transparent" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Regional map background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Image
+            src="/images/regional-map.jpg"
+            alt="Karnataka North Karnataka Bidar Kalaburagi Vijayapura regional map"
+            fill
+            sizes="100vw"
+             className="object-cover opacity-15 premium-image"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-deep-green/30 to-charcoal" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}

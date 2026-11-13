@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { FlaskConical, Palette, Factory, SprayCan } from "lucide-react";
+import Image from "next/image";
 
 const segments = [
   {
@@ -13,6 +14,7 @@ const segments = [
     wasteTypes: ["ETP Sludge", "Solvent Recovery Residue", "Mother Liquor Waste"],
     color: "from-lime to-green-400",
     bg: "bg-lime/10",
+    image: "/images/pharmaceutical-industry.webp",
   },
   {
     title: "Paint & Coatings",
@@ -22,6 +24,7 @@ const segments = [
     wasteTypes: ["Heavy Metal Sludge", "Solvent Waste", "Resin Waste"],
     color: "from-amber to-orange-500",
     bg: "bg-amber/10",
+    image: "/images/challenge-waste.jpg",
   },
   {
     title: "Petrochemical",
@@ -31,6 +34,7 @@ const segments = [
     wasteTypes: ["Spent Catalyst", "Hydrocarbon Waste", "Tank Bottom Sludge"],
     color: "from-emerald-400 to-lime",
     bg: "bg-emerald-400/10",
+    image: "/images/petrochemical-industry.webp",
   },
   {
     title: "Pesticide & Agrochemical",
@@ -40,6 +44,7 @@ const segments = [
     wasteTypes: ["Pesticide Residue", "Formulation Waste", "Container Residue"],
     color: "from-orange-500 to-amber",
     bg: "bg-orange-500/10",
+    image: "/images/impact-environment.jpg",
   },
 ];
 
@@ -49,6 +54,7 @@ export default function CustomerSegments() {
 
   return (
     <section
+      id="industries"
       ref={ref}
       className="relative py-32 overflow-hidden bg-deep-green"
     >
@@ -84,6 +90,14 @@ export default function CustomerSegments() {
               className="group"
             >
               <div className="glass rounded-3xl p-8 md:p-10 border border-white/5 card-hover h-full relative overflow-hidden">
+                <Image
+                  src={segment.image}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover opacity-15 premium-image transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-deep-green/95 via-deep-green/85 to-deep-green/65" />
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-lime/10 to-transparent rounded-full blur-3xl group-hover:from-lime/20 transition-all duration-500" />
 
                 <div className="relative z-10 flex flex-col h-full">

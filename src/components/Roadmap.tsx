@@ -31,6 +31,18 @@ const phases = [
       { text: "Series A fundraising", done: false },
     ],
   },
+  {
+    phase: "Phase 3",
+    period: "Future growth",
+    title: "Future Growth",
+    status: "Long-term",
+    milestones: [
+      { text: "Expand the regional waste-to-energy network", done: false },
+      { text: "Deepen long-term cement kiln partnerships", done: false },
+      { text: "Increase resource recovery across the value chain", done: false },
+      { text: "Build a broader circular industrial ecosystem", done: false },
+    ],
+  },
 ];
 
 export default function Roadmap() {
